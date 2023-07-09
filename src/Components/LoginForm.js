@@ -28,8 +28,9 @@ class LoginForm extends Component {
                 <h1>LOGIN</h1>
                 <form>
                     <div>
-                        <label>Username: </label>
+                        <label htmlFor='username'>Username: </label>
                         <input
+                         id='username'
                          type='text'
                          value={this.state.username}
                          onChange={this.handleInputChange}
@@ -37,8 +38,9 @@ class LoginForm extends Component {
                         />
                     </div>
                     <div>
-                        <label>Password: </label>
+                        <label htmlFor='password'>Password: </label>
                         <input 
+                         id='password'
                          type='password'
                          value={this.state.password}
                          onChange={this.handleInputChange}
