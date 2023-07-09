@@ -8,14 +8,12 @@ class LoginForm extends Component {
             password: ""
         }
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this)
     }
-    handleUsernameChange(evt){
-        this.setState({username: evt.target.value})
-    }
-    handlePasswordChange(evt){
-        this.setState({password: evt.target.value})
+    handleInputChange(evt){
+        this.setState({
+            [evt.target.name]: evt.target.value
+        })
     }
 
     handleFormSubmit(evt){
@@ -34,7 +32,7 @@ class LoginForm extends Component {
                         <input
                          type='text'
                          value={this.state.username}
-                         onChange={this.handleUsernameChange}
+                         onChange={this.handleInputChange}
                          name="username" 
                         />
                     </div>
@@ -43,7 +41,7 @@ class LoginForm extends Component {
                         <input 
                          type='password'
                          value={this.state.password}
-                         onChange={this.handlePasswordChange}
+                         onChange={this.handleInputChange}
                          name="password" 
                         />
                     </div>
