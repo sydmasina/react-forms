@@ -15,7 +15,7 @@ class ShoppingList extends Component {
         
     }
     addItem(evt, newItem){
-        this.setState({items: [...this.state.items, newItem]})
+        this.setState(state =>({items: [...state.items, newItem]}))
     }
 
     renderItems(){
