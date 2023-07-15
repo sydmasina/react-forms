@@ -15,6 +15,7 @@ class ColorBoxForm extends Component{
     handleSubmit(evt){
         evt.preventDefault();
         this.props.addBox(this.state)
+        this.setState({width:"", height:"", bgcolor:""})
     }
     render(){
         return(
