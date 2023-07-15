@@ -6,9 +6,13 @@ class ColorBoxMaker extends Component{
         super(props);
         this.state = {boxes: []};
         this.addBox = this.addBox.bind(this)
+        this.removeBox = this.removeBox.bind(this);
     }
     addBox(newBox){
         this.setState(state => ({boxes: [...state.boxes, newBox]}))
+    }
+    removeBox(boxId){
+        this.setState(state => ({boxes: state.boxes.filter((box, i)=> i !== boxId)}))
     }
     renderBoxes(){
         return(
@@ -16,7 +20,9 @@ class ColorBoxMaker extends Component{
                 {
                     this.state.boxes.map((box, i)=>{
                         return (
-                            <div key={i} style={{width: parseInt(box.width), height: parseInt(box.height), backgroundColor: box.bgcolor}}></div>
+                            <div key={i} style={{width: parseInt(box.width), height: parseInt(box.height), backgroundColor: box.bgcolor}}>
+                                <button onClick={()=>{this.removeBox(i)}}>X</button>
+                            </div>
                         )
                     })
                 }
